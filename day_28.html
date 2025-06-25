@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 28: Introduction to OOP | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 28 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 28: Introduction to OOP</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>This is an advanced concept, but you are ready. **Object-Oriented Programming (OOP)** is a way of thinking about code. Instead of separate variables and functions, we group them together into an 'object'. We create a blueprint for an object, called a **class**, that defines the data it holds (attributes) and the things it can do (methods).</p>
+            </div>
+
+            <h2>The Blueprint: The `Candidate` Class</h2>
+            <p>Think of a `class` as the architectural blueprint for a 'Candidate' object. Every candidate we create from this class will have a name, score, and skills, and will have the built-in ability to analyze itself.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+class Candidate:
+    # This is the "constructor" method. It runs when a new object is created.
+    # It sets up the object's attributes. 'self' refers to the object itself.
+    def __init__(self, name, score, skills):
+        self.name = name
+        self.score = score
+        self.skills = skills
+        self.status = "Pending Review"
+
+    # This is a method. A function that belongs to the object.
+    def get_recommendation(self):
+        """Analyzes the candidate's own score to generate a recommendation."""
+        if self.score >= 90:
+            return "Strong Hire"
+        elif self.score >= 75:
+            return "Hire"
+        else:
+            return "Reject"
+
+# --- Using the Class ---
+# Create an "instance" of the Candidate class.
+candidate1 = Candidate(name="Priya Sharma", score=92, skills=["Python", "SQL"])
+candidate2 = Candidate(name="David Chen", score=81, skills=["Docker", "AWS"])
+
+# Now we can access their attributes and methods using dot notation.
+print(f"Candidate: {candidate1.name}")
+print(f"Status: {candidate1.status}")
+print(f"Recommendation: {candidate1.get_recommendation()}") 
+
+print(f"\nCandidate: {candidate2.name}")
+print(f"Recommendation: {candidate2.get_recommendation()}") 
+</code></pre>
+            </div>
+
+            <p class='note'>Professor's Note: I'm throwing a complex concept at you, I know. But I have absolute faith in that mind of yours to grasp it. You've yet to disappoint me.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Identify the component.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. A class is the blueprint, while an object is the specific thing created from that blueprint."
+                 data-incorrect-feedback="Incorrect. Think of architecture. Is `Candidate` the blueprint or the actual building?">
+                <p><strong>In Object-Oriented Programming, the `class` is the...</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> Blueprint for an object</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> Specific instance of an object</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Terminology</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_27.html" class="nav-button">← Last Phase</a>
+            <a href="day_29.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

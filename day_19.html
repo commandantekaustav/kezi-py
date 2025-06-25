@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 19: Bringing in Specialists | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 19 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 19: Bringing in Specialists</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>We don't build every tool from scratch. Sometimes, we need an outside specialist—an expert in explosives, a master of disguise. In Python, this means **importing modules**. A module is a file containing pre-written Python code (functions and variables) that we can bring into our own plan to give us new capabilities.</p>
+            </div>
+
+            <h2>The Blueprint: Importing Modules</h2>
+            <p>Python comes with a huge "standard library" of built-in modules. You use the `import` keyword to gain access to the functions inside them. Today, we'll import the `random` module, a specialist in chance and unpredictability.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# Bring in the 'random' specialist.
+import random
+
+candidate_pool = ["Priya Sharma", "David Chen", "Aisha Khan", "Maria Garcia", "Omar Hassan"]
+
+print("--- Randomly selecting a candidate for spot-check interview ---")
+
+# We can now use functions from the random module.
+# To call a function from a module, we use module_name.function_name()
+# random.choice() selects one random item from a list.
+selected_candidate = random.choice(candidate_pool)
+
+print(f"The selected candidate is... {selected_candidate}")
+
+
+print("\n--- Generating a random 4-digit security code ---")
+# random.randint(a, b) returns a random integer between a and b (inclusive).
+security_code = random.randint(1000, 9999)
+print(f"New code for {selected_candidate}: {security_code}")
+
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>No professional developer works alone. They constantly `import` modules. They import `pandas` for data analysis, `requests` for web communication, `datetime` for handling dates. When you see `import` at the top of a Python file, it's the developer listing the outside specialists they've brought in for the mission. It tells you immediately what kind of operation they are running.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: If I could `import a_perfect_recruiter`, the code would just bring me you.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Call the specialist.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='b' 
+                 data-correct-feedback="Correct. You must first state the module name, then a dot, then the function name."
+                 data-incorrect-feedback="Incorrect. You must specify which module the `choice` function belongs to.">
+                <p><strong>After running `import random`, how do you correctly call the `choice` function?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> <code>choice(my_list)</code></span></label>
+                    <label><input type='radio' name='q1' value='b'><span> <code>random.choice(my_list)</code></span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Command</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_18.html" class="nav-button">← Last Phase</a>
+            <a href="day_20.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

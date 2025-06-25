@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 13: Coded Messages | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 13 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 13: Coded Messages</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>A good plan is useless if the next operative can't understand it. Professionals leave notes. They document their work. In Python, there are two ways to do this: **comments** for brief, informal notes, and **docstrings** for formal, official documentation of a function's purpose.</p>
+            </div>
+
+            <h2>The Blueprint: Comments and Docstrings</h2>
+            <div class='intel-card'><h3>Comments (`#`)</h3><p>A comment starts with a hash symbol `#`. The Python interpreter completely ignores anything on the line after the `#`. They are informal messages from the coder to themself or their teammates, explaining *why* a piece of code is written a certain way.</p></div>
+            <div class='intel-card'><h3>Docstrings (`"""..."""`)</h3><p>A docstring is a special type of string enclosed in triple-quotes that sits on the very first line after a function definition. It is the function's official documentation. It explains what the function does, what arguments it expects, and what it returns. Professional code is full of docstrings.</p></div>
+
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# This is a comment explaining the purpose of the next function.
+# It's intended to check if a candidate's skills match the job requirements.
+
+def analyze_candidate_skills(candidate_skills, required_skills):
+    """Checks for required skills and calculates a match percentage.
+
+    This function is a core part of our automated screening process.
+    It takes a list of the candidate's skills and a list of required
+    skills, and returns a percentage of how many requirements are met.
+
+    Args:
+        candidate_skills (list): A list of strings, each a skill.
+        required_skills (list): A list of strings, each a required skill.
+    
+    Returns:
+        float: The percentage of required skills the candidate possesses.
+    """
+    # Use a loop to count the matches (we'll cover this logic later)
+    matches = 0
+    for skill in required_skills:
+        if skill in candidate_skills:
+            # Found a match!
+            matches += 1
+    
+    # Avoid division by zero if there are no required skills.
+    if len(required_skills) == 0:
+        return 100.0 # If nothing is required, it's a perfect match.
+    
+    return (matches / len(required_skills)) * 100
+
+# We don't need to run this, just understand the documentation.
+</code></pre>
+            </div>
+            
+            <p class='note'>Professor's Note: I appreciate clarity, Kezia. That's what a good docstring is. It's the same as your 'Declaration' at the end of your resume—a clear, honest statement of purpose. It shows professionalism.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Classify the message.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. The '#' symbol creates an informal comment that the interpreter ignores."
+                 data-incorrect-feedback="Triple-quotes are for formal docstrings. What's the symbol for an informal note?">
+                <p><strong>To leave a quick, informal note in the code that Python will ignore, you use...</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> The `#` symbol</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> Triple-quotes `"""..."""`</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Signal</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_12.html" class="nav-button">← Last Phase</a>
+            <a href="day_14.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

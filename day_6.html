@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 6: The Target List | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 6 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 6: The Target List</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>An operative is useless if they can only track one target at a time. We need to manage lists of targets, lists of equipment, lists of contacts. In Python, the most fundamental way to store an ordered collection of items is a **list**. It is your digital target list.</p>
+            </div>
+
+            <h2>The Blueprint: Python Lists</h2>
+            <p>A list is a container that holds multiple items in a specific order. You create a list using square brackets `[]`, with items separated by commas.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# A list of candidate names (strings)
+candidate_pipeline = ["Priya Sharma", "David Chen", "Aisha Khan"]
+print(f"Current pipeline: {candidate_pipeline}")
+
+# Accessing an item by its index. Python starts counting from 0.
+# The first item is at index 0.
+first_candidate = candidate_pipeline[0]
+print(f"First candidate to interview: {first_candidate}")
+
+# Adding a new candidate to the end of the list with .append()
+candidate_pipeline.append("Maria Garcia")
+print(f"Updated pipeline: {candidate_pipeline}")
+
+# Removing a candidate from the list with .remove()
+candidate_pipeline.remove("David Chen")
+print(f"After interview: {candidate_pipeline}")
+
+# Checking how many candidates are in the pipeline with len()
+num_candidates = len(candidate_pipeline)
+print(f"Number of candidates remaining: {num_candidates}")
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>Lists are everywhere in programming. A list of users, a list of products, a list of search results. Every time you see an ordered collection of items on a screen, a list (or a similar structure) is powering it behind the scenes. This is how developers manage data in bulk.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: My list of essential personnel for this operation is very short. Your name is at the top. Index 0.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Predict the output.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='c' 
+                 data-correct-feedback="Correct. Python list indices start at 0, so index 2 is the third item, 'Engineer'."
+                 data-incorrect-feedback="Remember, Python starts counting from 0. Index 0 is 'Analyst', index 1 is 'Scientist'.">
+                <p><strong>Given the code: `roles = ["Analyst", "Scientist", "Engineer"]`, what will `print(roles[2])` display?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> Analyst</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> Scientist</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> Engineer</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Output</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_5.html" class="nav-button">← Last Phase</a>
+            <a href="day_7.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

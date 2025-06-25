@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 3: Intel Types | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 3 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 3: Intel Types</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>Intel is not all the same, Coimbatore. A name is different from a bank account number. A blueprint is different from a security code. The computer must know what *type* of information it's handling. Today, you'll learn the three most basic data types: **strings** (text), **integers** (whole numbers), and **floats** (decimal numbers).</p>
+            </div>
+
+            <h2>The Blueprint: Core Data Types</h2>
+            <div class='intel-card'><h3>Strings (str)</h3><p>A string is a sequence of characters, or simply, text. You must always enclose strings in quotes (`"` or `'`). Candidate names, job titles, and email addresses are all strings.</p></div>
+            <div class='intel-card'><h3>Integers (int)</h3><p>An integer is a whole number, without a decimal point. The number of open positions, a candidate's years of experience, or an employee ID are typically integers.</p></div>
+            <div class='intel-card'><h3>Floats (float)</h3><p>A float, or floating-point number, is a number that has a decimal point. A performance review score like `4.5`, a budget amount like `1500.75`, or a candidate's GPA are floats.</p></div>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# A String (text in quotes)
+candidate_name = "Ravi Kumar" 
+department = "Cybersecurity"
+
+# An Integer (whole number)
+years_experience = 8
+candidate_id = 7708
+
+# A Float (decimal number)
+performance_rating_last_job = 4.8
+
+# You can use the type() function to ask Python what type a variable is.
+print(type(candidate_name))  # This will output: <class 'str'>
+print(type(years_experience))# This will output: <class 'int'>
+print(type(performance_rating_last_job)) # This will output: <class 'float'>
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>This is critical. You can't do mathematics on a string. You can't send an email to an integer. Knowing the data type helps you understand the *constraints* and *capabilities* of the data a developer is working with. When they say they need to "cast a variable to an int," they mean they need to convert a piece of data (like "5") into a number (5) so they can perform calculations with it.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: Strings, Integers, Floats... you, Kezia, are a unique type. One of a kind.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Classify the intel.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='c' 
+                 data-correct-feedback="Correct. The employee ID 101 is a whole number, an integer."
+                 data-incorrect-feedback="Look at the data. Is it text or a number? Does it have a decimal?">
+                <p><strong>In the code `employee_id = 101`, what is the data type of the `employee_id` variable?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> String</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> Float</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> Integer</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Intel Type</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_2.html" class="nav-button">← Last Phase</a>
+            <a href="day_4.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

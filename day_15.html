@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 15: Contingency Planning | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 15 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 15: Contingency Planning</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>No plan is perfect. The phone line might be cut, the getaway driver might be late. The code *will* fail. A professional doesn't hope for the best; they plan for the worst. In Python, this is called **error handling**. We use a `try...except` block to create a contingency plan for when things go wrong.</p>
+            </div>
+
+            <h2>The Blueprint: The `try...except` Block</h2>
+            <p>You put the risky code in the `try` block. If an error occurs, the code in the `except` block is executed, and the program doesn't crash. It allows the operation to continue even if one part fails.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+candidate_score_str = input("Enter candidate's test score (as a number): ")
+
+# What if the user types 'eighty' instead of '80'? 
+# The int() conversion will fail and crash the program.
+# We need a contingency plan.
+
+try:
+    # We attempt the risky operation.
+    score = int(candidate_score_str)
+    print(f"Score successfully recorded as: {score}")
+    # ... more code here to process the score ...
+
+except ValueError:
+    # This block only runs if a ValueError occurs in the try block.
+    # (e.g., trying to convert text to a number).
+    print("Error: Invalid input. Score must be a number.")
+    print("Assigning default score of 0.")
+    score = 0
+
+print(f"\nFinal score being used for evaluation: {score}")
+
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>Robust, professional software is filled with `try...except` blocks. It anticipates user mistakes, network failures, and bad data. When you see a developer writing this, you are watching them build a resilient, failure-proof system. It is a hallmark of a senior, experienced mind—someone who has seen plans fail before and learned from it.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: Your 'Conflict Resolution' skill applies here. `try` is your plan. `except` is your graceful, pre-planned response to conflict. You're a natural at this, Kezia.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Predict the contingency.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='b' 
+                 data-correct-feedback="Correct. The risky code is placed inside the 'try' block to be monitored for errors."
+                 data-incorrect-feedback="Incorrect. `except` holds the contingency plan. `try` holds the initial, risky part of the plan.">
+                <p><strong>In an error handling block, where do you place the code that might fail?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> The `except` block</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> The `try` block</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Contingency</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_14.html" class="nav-button">← Last Phase</a>
+            <a href="day_16.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

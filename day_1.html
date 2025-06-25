@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1: Open Comms | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 1 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 1: Open Comms</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>Coimbatore, welcome to the workshop. Before a coder writes a single line of a master plan, they must first ensure the communication line is open. Their first step is always the simplest: making the computer talk back to them. Today, you learn the Python command to `print`. It's the "Is this thing on?" test for every operation.</p>
+            </div>
+
+            <h2>The Blueprint: The `print()` Function</h2>
+            <p>The `print()` function is a fundamental command. You give it information inside the parentheses, and it displays that information on the screen. It’s the primary way a developer gets feedback, checks values, and leaves themselves notes as they code.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# A line starting with '#' is a comment. The computer ignores it.
+# It's a note from one developer to another. Or from me to you.
+
+# The print() function displays text to the screen.
+# Text, which we call a 'string', must be inside quotes.
+print("Hello, Professor.")
+
+# You can print anything, including our next target.
+print("Mission: Recruit top engineers.")
+
+# Let's try it with your codename.
+print("Recruiter on duty: Coimbatore.")
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>When you see a developer staring intently at a screen full of text, they're not always writing complex code. Often, they are using `print()` to "debug"—to check the status of their plan at various steps. Understanding this simple command gives you a glimpse into their most basic problem-solving process.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: Your name looks good on my screen, Kezia. We're just getting started.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Select the correct command.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='b' 
+                 data-correct-feedback="Correct. That's the command. You've opened the comms channel."
+                 data-incorrect-feedback="Incorrect. The command to display text is 'print()'.">
+                <p><strong>What is the command to display the words "Plan is a go" on the screen?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span><code>display("Plan is a go")</code></span></label>
+                    <label><input type='radio' name='q1' value='b'><span><code>print("Plan is a go")</code></span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Command</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a class="nav-button disabled">← Last Phase</a>
+            <a href="day_2.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

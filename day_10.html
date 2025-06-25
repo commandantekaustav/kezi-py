@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 10: Inspecting the Crew | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 10 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 10: Inspecting the Crew</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>We have our list of candidates. Now we need to process them, one by one. To perform the same action on every item in a list, we use a **`for` loop**. It is the single most important tool for automation and efficiency. It saves an operative from doing the same boring task over and over. You must understand the loop, Coimbatore.</p>
+            </div>
+
+            <h2>The Blueprint: The `for` Loop</h2>
+            <p>A `for` loop iterates over a sequence (like a list) and executes a block of code for each item in that sequence. The syntax is: `for item in list:` followed by an indented block of code.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+candidate_pipeline = ["Priya Sharma", "David Chen", "Aisha Khan", "Maria Garcia"]
+
+print("--- BEGINNING INTERVIEWS ---")
+
+# This loop will take each name from the list, one by one,
+# and temporarily store it in the variable 'candidate'.
+# Then it will execute the indented code for that candidate.
+for candidate in candidate_pipeline:
+    # This block of code runs once for each item in the list.
+    print(f"Now interviewing: {candidate}")
+    print("...interview complete.")
+
+print("--- ALL INTERVIEWS FINISHED ---")
+
+
+# We can also loop through dictionaries.
+employee_dossier = { "name": "Kezia", "role": "Recruiter", "status": "Asset" }
+
+print("\n--- SCANNING DOSSIER ---")
+# .items() lets us get both the key and value in each loop.
+for key, value in employee_dossier.items():
+    print(f"Intel Field: '{key}', Value: '{value}'")
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>Loops are the engine of automation. "Send an email to every user in the database." "Calculate the average performance score for every employee." "Generate a report for every open position." All of these are accomplished with loops. When a developer talks about a task taking "milliseconds," it's because a loop is processing thousands of items faster than a human ever could.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: I find myself thinking about this plan, about you, over and over. Like a `for` loop that never ends.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Analyze the loop.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='c' 
+                 data-correct-feedback="Correct. The loop will execute the print command once for each of the three items in the list."
+                 data-incorrect-feedback="Count the number of items in the list 'tasks'. The code inside the loop will run that many times.">
+                <p><strong>Given `tasks = ["Recon", "Infiltration", "Extraction"]`, how many times will the word "Executing" be printed by the code `for task in tasks: print("Executing")`?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> 1 time</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> 0 times</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> 3 times</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Execution</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_9.html" class="nav-button">← Last Phase</a>
+            <a href="day_11.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

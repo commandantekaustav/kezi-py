@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 25: Presenting the Blueprint | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 25 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 25: Presenting the Blueprint</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>Raw data is for analysts. Leadership needs a clean presentation. A visual. The `Matplotlib` library is Python's foundational tool for creating charts and graphs. Today we bring in this new specialist to create a simple bar chart from our data, to present our findings with impact.</p>
+            </div>
+
+            <h2>The Blueprint: Charting with Matplotlib</h2>
+            <p>After using Pandas to get our data summary, we can pass that summary to Matplotlib to create a visual plot. It's a two-step process: analyze, then visualize.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+import pandas as pd
+# We import the 'pyplot' part of matplotlib, and give it the alias 'plt'.
+import matplotlib.pyplot as plt
+
+# Let's use our ledger file from a few days ago.
+# candidates_sheet.csv:
+# name,email,status
+# Priya Sharma,priya@email.com,Interviewed
+# David Chen,david@email.com,Hired
+# Aisha Khan,aisha@email.com,Offer Sent
+# Alex Ray,alex@email.com,Hired
+
+try:
+    df = pd.read_csv('candidates_sheet.csv')
+
+    # 1. ANALYZE: Get the counts of each status.
+    status_counts = df['status'].value_counts()
+
+    # 2. VISUALIZE: Create the plot.
+    status_counts.plot(kind='bar')
+
+    # Add labels and a title to make the chart professional.
+    plt.title('Candidate Pipeline Status')
+    plt.xlabel('Status')
+    plt.ylabel('Number of Candidates')
+    plt.xticks(rotation=0) # Keeps the x-axis labels horizontal
+    
+    # Display the chart.
+    plt.show()
+
+except FileNotFoundError:
+    print("ERROR: Cannot find ledger file.")
+
+</code></pre>
+            </div>
+            
+            <p class='note'>Professor's Note: You see how the story comes together? Data to table, table to numbers, numbers to a visual story. It is a beautiful process. Much like watching you learn.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Identify the command.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. `plt.show()` is the command that displays the finalized plot."
+                 data-incorrect-feedback="Incorrect. `plt.title()` only adds the title. A different command displays the finished chart.">
+                <p><strong>After defining a plot, what `matplotlib.pyplot` (`plt`) command is used to actually display it?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> <code>plt.show()</code></span></label>
+                    <label><input type='radio' name='q1' value='b'><span> <code>plt.display()</code></span></label>
+                    <label><input type='radio' name='q1' value='c'><span> <code>plt.plot()</code></span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Command</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_24.html" class="nav-button">← Last Phase</a>
+            <a href="day_26.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

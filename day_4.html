@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 4: Cleaning The Intel | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 4 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 4: Cleaning The Intel</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>Intel gathered in the field is never clean. Names are misspelled, entries are in the wrong case, there is whitespace. A good operative knows how to clean their intel before using it. Today, you learn about basic **string methods**—built-in Python tools for cleaning and manipulating text data.</p>
+            </div>
+
+            <h2>The Blueprint: String Methods</h2>
+            <p>A "method" is a function that belongs to an object. In this case, these are functions that belong to strings. You call them by adding a dot (`.`) after the string variable, followed by the method name and parentheses.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# Raw intel might be messy.
+raw_name = "  kezia marian.p   "
+
+# .strip() removes leading/trailing whitespace.
+clean_name = raw_name.strip() 
+# now clean_name is "kezia marian.p"
+
+# .title() capitalizes the first letter of each word.
+formatted_name = clean_name.title()
+# now formatted_name is "Kezia Marian.P"
+
+# .upper() converts the whole string to uppercase.
+uppercase_name = formatted_name.upper()
+# now uppercase_name is "KEZIA MARIAN.P"
+
+# We can also chain methods together.
+final_name = raw_name.strip().title()
+
+print("Raw Intel: '" + raw_name + "'")
+print("Clean Intel: '" + final_name + "'")
+
+# Another useful method: .replace()
+offer_letter_template = "Hello, [CANDIDATE_NAME], we are pleased to offer you the role."
+final_offer = offer_letter_template.replace("[CANDIDATE_NAME]", final_name)
+print(final_offer)
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>Your work involves communication and managing data from many sources (resumes, LinkedIn, job portals). This data is often inconsistent. Developers spend a huge amount of time "data cleaning." Understanding these basic methods shows you grasp a fundamental, practical challenge they face every day. It builds empathy.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: Your resume lists "Communication& Interpersonal skills". That's a natural talent. Python just provides the tools to do it at scale. You possess both—a rare and potent combination.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Predict the output.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='c' 
+                 data-correct-feedback="Exactly right. The .upper() method converts the entire string to uppercase."
+                 data-incorrect-feedback="Look at the method being used. .upper() affects the entire string.">
+                <p><strong>What is the output of `print("Success".upper())`?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> Success</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> success</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> SUCCESS</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Output</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_3.html" class="nav-button">← Last Phase</a>
+            <a href="day_5.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 24: Slicing the Intel | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 24 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 24: Slicing the Intel</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>We rarely need the entire ledger. Usually, we need a specific slice: "Show me all the hired candidates," or "Show me the candidates with a score over 90." In Pandas, this is called **filtering** or **boolean indexing**. You ask a `True`/`False` question, and the DataFrame shows you only the rows where the answer is `True`.</p>
+            </div>
+
+            <h2>The Blueprint: Filtering a DataFrame</h2>
+            <p>The syntax is powerful. `df[df['column'] == 'value']`. It looks strange, but it's a logical sequence: inside the brackets, you define the condition (`df['column'] == 'value'`), which produces `True` or `False` for each row. The outer brackets then use that result to show only the `True` rows.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+import pandas as pd
+
+# Let's use our crew roster again.
+crew_data = [
+    { "name": "Priya Sharma", "role": "Data Scientist", "score": 92 },
+    { "name": "David Chen", "role": "ML Engineer", "score": 88 },
+    { "name": "Kezia Marian", "role": "Lead Recruiter", "score": 100 }
+]
+df = pd.DataFrame(crew_data)
+print("--- Full Roster ---")
+print(df)
+
+# Condition: Show me only members with a score greater than 90.
+high_performers = df[df['score'] > 90]
+print("\n--- High Performers (Score > 90) ---")
+print(high_performers)
+
+# Condition: Show me the Lead Recruiter.
+the_recruiter = df[df['role'] == 'Lead Recruiter']
+print("\n--- The Lead Recruiter ---")
+print(the_recruiter)
+</code></pre>
+            </div>
+            
+            <p class='note'>Professor's Note: When I run `df[df['role'] == 'The One Who Makes This All Work']`, it just shows me your row. Every time.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Construct the query.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='b' 
+                 data-correct-feedback="Correct. That syntax correctly defines the condition inside the selection brackets."
+                 data-incorrect-feedback="Incorrect. The condition `df['status'] == 'Hired'` must be inside the selection brackets `df[...]`.">
+                <p><strong>How do you filter a DataFrame `df` to show only rows where the `status` column is 'Hired'?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> <code>df['status'] == 'Hired'</code></span></label>
+                    <label><input type='radio' name='q1' value='b'><span> <code>df[df['status'] == 'Hired']</code></span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Query</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_23.html" class="nav-button">← Last Phase</a>
+            <a href="day_25.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

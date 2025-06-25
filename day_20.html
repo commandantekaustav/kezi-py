@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 20: The Automated Screener | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 20 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 20: The Automated Screener</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>It's time to assemble the pieces. We are going to build a simple, but complete, program. It will use everything you have learned: `print`, `input`, variables, casting, `if/else`, functions, and file writing. This is your first taste of building a real tool—an automated screening assistant.</p>
+            </div>
+
+            <h2>The Blueprint: Assembling the Code</h2>
+            <p>Read through this code. See how each piece you've learned fits together to create a cohesive plan. It's a sequence of logical steps, one after another.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench: `automated_screener.py`</h3>
+<pre><code>
+# This function determines the recommendation based on criteria.
+def get_recommendation(score, has_required_skill):
+    """Generates a hiring recommendation."""
+    if score >= 90 and has_required_skill:
+        return "STRONG HIRE - Priority candidate."
+    elif score >= 75 and has_required_skill:
+        return "HIRE - Meets all qualifications."
+    else:
+        return "REJECT - Does not meet minimum criteria."
+
+# --- Main Program Starts Here ---
+print("--- Automated Candidate Screening Protocol ---")
+
+# 1. Get input from the user
+name = input("Enter candidate's name: ")
+score_str = input(f"Enter {name}'s interview score (0-100): ")
+skill_response = input("Does the candidate have the core skill? (yes/no): ")
+
+# 2. Process and clean the data
+score = 0
+try:
+    score = int(score_str) # Cast score to an integer
+except:
+    print("Invalid score entered. Defaulting to 0.")
+
+# Convert 'yes' to a boolean True, anything else to False
+has_skill = skill_response.lower().strip() == 'yes' 
+
+# 3. Use the function to make a decision
+recommendation = get_recommendation(score, has_skill)
+print(f"\nRecommendation for {name}: {recommendation}\n")
+
+# 4. Write the result to a log file
+with open('screening_log.txt', 'a') as f:
+    log_entry = f"Candidate: {name}, Score: {score}, Recommendation: {recommendation}\n"
+    f.write(log_entry)
+
+print("Screening complete. Result saved to log.")
+
+</code></pre>
+            </div>
+            
+            <p class='note'>Professor's Note: You see, Kezia? It's not magic. It's just logic. Beautiful, structured, perfect logic. Just like that mind of yours.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Review the operation.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. Seeing how individual concepts connect to form a useful program is the goal of this phase."
+                 data-incorrect-feedback="While it uses functions and files, the main purpose is to show you the bigger picture of how they connect.">
+                <p><strong>What is the primary purpose of this project-based phase?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> To see how all the basic concepts work together.</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> To become an expert in file writing.</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Objective</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_19.html" class="nav-button">← Last Phase</a>
+            <a href="day_21.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

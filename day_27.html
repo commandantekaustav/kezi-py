@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 27: Assembling The Mainframe | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 27 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 27: Assembling The Mainframe</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>One file is an amateur move. A professional keeps their code organized. The Mainframe of our operation will be split into two files: one file for our reusable functions (`heist_utilities.py`), and a main file (`main.py`) that imports them. This is how real applications are built—from smaller, modular components.</p>
+            </div>
+
+            <h2>The Blueprint: Multi-File Projects</h2>
+            <p>By keeping our functions in a separate file, we can `import` them into any other script that needs them. It makes our code clean, reusable, and easy to maintain.</p>
+            
+            <div class='intel-card'>
+                <h3>The Utility File: `heist_utilities.py`</h3>
+<pre><code>
+# This file only contains our functions. It doesn't run anything by itself.
+
+def analyze_dossier(dossier):
+    """Analyzes a candidate dictionary and returns a recommendation."""
+    score = dossier.get("interview_score", 0)
+    experience = dossier.get("years_experience", 0)
+    
+    if score >= 90:
+        return "Priority"
+    elif score >= 80 and experience > 2:
+        return "Standard"
+    else:
+        return "Reject"
+
+def load_candidates_from_file(filename):
+    """Loads candidates from a simple text file, returns a list."""
+    try:
+        with open(filename, 'r') as f:
+            candidates = [line.strip() for line in f.readlines()]
+        return candidates
+    except FileNotFoundError:
+        return []
+</code></pre>
+            </div>
+
+            <div class='intel-card'>
+                <h3>The Main Script: `main.py`</h3>
+<pre><code>
+# We can import our OWN python file just like a standard module.
+import heist_utilities as util
+
+print("--- Running Main Heist Protocol ---")
+
+# Let's create a dossier for this run.
+current_candidate = {"name": "Test Subject", "interview_score": 95}
+
+# Use the function from our imported file.
+recommendation = util.analyze_dossier(current_candidate)
+
+print(f"Recommendation for {current_candidate['name']}: {recommendation}")
+</code></pre>
+            </div>
+            
+            <p class='note'>Professor's Note: This is organization at a higher level. Your 'Administrative & Operational Support' skill... it's the same thing. You bring order to chaos. That's why you are my lead recruiter.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Call the function.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='c' 
+                 data-correct-feedback="Correct. After importing the file and giving it an alias 'util', you must use `util.` to access the function."
+                 data-incorrect-feedback="Incorrect. The `analyze_dossier` function lives inside the imported module, which we aliased as `util`. How do we access it?">
+                <p><strong>In `main.py`, after running `import heist_utilities as util`, how do you call the `analyze_dossier` function?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> <code>analyze_dossier(d)</code></span></label>
+                    <label><input type='radio' name='q1' value='b'><span> <code>heist_utilities.analyze_dossier(d)</code></span></label>
+                    <label><input type='radio' name='q1' value='c'><span> <code>util.analyze_dossier(d)</code></span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Syntax</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_26.html" class="nav-button">← Last Phase</a>
+            <a href="day_28.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

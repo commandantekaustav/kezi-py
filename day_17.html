@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 17: Planting Disinformation | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 17 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 17: Planting Disinformation</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>Intercepting comms is only half the job. We also need to plant our own messages—to create reports, logs, and new dossiers. Today you learn to **write to files**. This is how a program leaves a permanent record of its work, long after the program itself has finished running.</p>
+            </div>
+
+            <h2>The Blueprint: Writing to a File</h2>
+            <p>The process is similar to reading, but we use write mode (`'w'`) or append mode (`'a'`).
+            <br>• `'w'` (Write): Creates a new file or **overwrites** an existing file completely.
+            <br>• `'a'` (Append): Creates a new file or adds new content to the **end** of an existing file.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# Candidate data we've collected in our script
+candidates_to_shortlist = ["Priya Sharma", "Aisha Khan"]
+rejected_candidates = ["David Chen"]
+
+report_filename = "hiring_report.txt"
+
+# Let's use 'w' to create and write the report header.
+# This will overwrite the file if it already exists.
+with open(report_filename, 'w') as f:
+    f.write("--- CONFIDENTIAL HIRING REPORT ---\n")
+    f.write("Generated automatically.\n")
+    f.write("--------------------------------\n\n")
+
+# Now, let's use 'a' to append the short-listed candidates
+# without erasing the header.
+with open(report_filename, 'a') as f:
+    f.write("SHORTLISTED FOR FINAL INTERVIEW:\n")
+    for candidate in candidates_to_shortlist:
+        f.write(f"- {candidate}\n") # \n adds a new line
+
+# Let's append the rejected list as well.
+with open(report_filename, 'a') as f:
+    f.write("\nREJECTED AT THIS STAGE:\n")
+    for candidate in rejected_candidates:
+        f.write(f"- {candidate}\n")
+
+print(f"Report '{report_filename}' has been successfully generated.")
+</code></pre>
+            </div>
+
+            <p class='note'>Professor's Note: `'w'` erases everything and starts fresh, `'a'` adds to what's already there. Your presence in this operation feels like you've completely overwritten the old plan. A welcome change.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Choose the correct mode for the job.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='b' 
+                 data-correct-feedback="Correct. 'a' for append is used to add new entries to an existing log file without erasing past events."
+                 data-incorrect-feedback="Be careful. 'w' for write would erase the entire log each time. You want to ADD to it.">
+                <p><strong>To add a new line to an existing log file every time an event occurs, which mode is best?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> 'w' (write)</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> 'a' (append)</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> 'r' (read)</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Mode</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_16.html" class="nav-button">← Last Phase</a>
+            <a href="day_18.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

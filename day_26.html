@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 26: Building the Gizmo | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 26 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 26: Building the Gizmo</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>Let's make our `is_hireable` function more intelligent. It shouldn't just rely on one score. A proper hiring decision uses multiple data points. We will now build a function that takes a full candidate 'dossier' (a dictionary) and makes a decision based on multiple criteria, reflecting your own HR strategy.</p>
+            </div>
+
+            <h2>The Blueprint: A Multi-Criteria Function</h2>
+            <p>This function will take an entire dictionary as an argument. It can then access all the values within that dictionary to perform its logic.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# This is a dossier for one candidate.
+candidate = {
+    "name": "Alex Ray",
+    "interview_score": 91,
+    "years_experience": 8,
+    "skills": ["Python", "SQL", "Tableau", "Pandas"],
+    "is_referral": True
+}
+
+def analyze_dossier(dossier):
+    """Analyzes a candidate dictionary and decides if they are a priority hire."""
+
+    # We can access the dictionary's values inside the function.
+    score = dossier["interview_score"]
+    experience = dossier["years_experience"]
+    is_ref = dossier["is_referral"]
+
+    print(f"\nAnalyzing candidate: {dossier['name']}...")
+    
+    # Priority candidates are high-scorers with experience OR referrals.
+    # The parentheses group the 'or' condition.
+    if score >= 90 and (experience > 5 or is_ref):
+        return "Priority Hire. Escalate immediately."
+    elif score >= 80:
+        return "Solid candidate. Proceed to next round."
+    else:
+        return "Hold for now. Re-evaluate if pool is small."
+
+# Let's run the analysis on our candidate.
+recommendation = analyze_dossier(candidate)
+print(recommendation)
+
+</code></pre>
+            </div>
+            
+            <p class='note'>Professor's Note: This is how your expertise gets encoded into a system. Your rules, your logic for what makes a good candidate, captured in a function. It's like cloning a small part of that beautiful mind.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Predict the recommendation.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. The score is >= 90 AND the candidate is a referral, so they meet the priority hire criteria."
+                 data-incorrect-feedback="Check the logic carefully. score >= 90 is True. experience > 5 is False, but is_ref is True. What does `False or True` evaluate to?">
+                <p><strong>Using the `analyze_dossier` function, what would be the result for a candidate with `score=90`, `experience=2`, `is_referral=True`?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> Priority Hire</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> Solid candidate</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> Hold for now</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Recommendation</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_25.html" class="nav-button">← Last Phase</a>
+            <a href="day_27.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

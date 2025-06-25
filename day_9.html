@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 9: Making the Call | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 9 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 9: Making the Call</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>It's not enough to ask True/False questions. We must *act* based on the answers. This is done with **`if`, `elif`, and `else` statements**. This is called **conditional logic**, and it's how you give a program the power to make decisions. It's the moment you tell the crew "Go" or "No Go."</p>
+            </div>
+
+            <h2>The Blueprint: Conditional Statements</h2>
+            <p>The structure is a simple sentence: <strong>If</strong> this condition is `True`, do this. **Else if** (`elif`) this other condition is `True`, do that instead. **Else** (if none of the above were `True`), do this final thing.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# Let's automate a hiring recommendation.
+score = 88
+years_experience = 6
+
+print(f"Analyzing candidate with score: {score} and experience: {years_experience}")
+
+# The code inside an 'if' block only runs if the condition is True.
+# Note the colon : and the indentation. Indentation is critical in Python.
+if score >= 95:
+    print("Recommendation: Strong Hire. Top of the class.")
+
+# 'elif' is checked only if the first 'if' was False.
+elif score >= 85:
+    print("Recommendation: Hire. Meets all criteria.")
+
+# 'else' is the catch-all. It runs if all preceding conditions were False.
+else:
+    print("Recommendation: Reject. Does not meet scoring threshold.")
+
+# We can also combine conditions with 'and' or 'or'.
+if score > 90 and years_experience > 5:
+    print("Status: Fast-track to final interview.")
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>This is the structure of all rules-based systems. "If employee tenure > 1 year, they are eligible for a bonus." "If candidate has skill X AND skill Y, advance them." When you ask a developer about the "business logic" they implemented, you are asking them about the series of `if/elif/else` statements they wrote.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: For me, the logic is simple. `if recruiter_is_kezia: print("The perfect choice.")` There is no `elif` or `else`. </p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Predict the decision.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='b' 
+                 data-correct-feedback="Correct. The 'if' condition is False, but the 'elif' condition (75 >= 70) is True, so its block is executed."
+                 data-incorrect-feedback="Check the conditions in order. The first 'if' (75 > 90) is False. So, what's next?">
+                <p><strong>Given `score = 75`, what will this code print?<br><code>if score > 90: print("A")</code><br><code>elif score >= 70: print("B")</code><br><code>else: print("C")</code></strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> A</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> B</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> C</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Decision</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_8.html" class="nav-button">← Last Phase</a>
+            <a href="day_10.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

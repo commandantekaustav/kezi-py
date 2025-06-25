@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 22: The Master Spreadsheet | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 22 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 22: The Master Spreadsheet</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>You have met this specialist before. The ultimate data organizer. Now you will learn to use it. **Pandas** is the most essential library for data analysis in Python. Its core tool is the **DataFrame**—a powerful, in-memory version of an Excel spreadsheet. Today, you'll learn to create one.</p>
+            </div>
+
+            <h2>The Blueprint: The Pandas DataFrame</h2>
+            <p>You can create a DataFrame from a list of dictionaries—the exact structure you learned in Phase 18. Each dictionary becomes a row, and each key becomes a column header.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# First, we must import our specialist
+import pandas as pd # The 'as pd' is a common alias, a shorter codename.
+
+# This is our crew roster from Phase 18
+crew_data = [
+    { "name": "Priya Sharma", "role": "Data Scientist", "score": 92 },
+    { "name": "David Chen", "role": "ML Engineer", "score": 88 },
+    { "name": "Kezia Marian", "role": "Lead Recruiter", "score": 100 }
+]
+
+# Create the DataFrame from our list of dictionaries
+df = pd.DataFrame(crew_data)
+
+# The print() function now displays a beautifully formatted table.
+print("--- Crew Roster DataFrame ---")
+print(df)
+
+# You can get basic stats with the .describe() method
+print("\n--- Mission Score Analysis ---")
+print(df['score'].describe())
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>This is it. The bridge between your first course and this one. Almost every 'Historian' (Data Analyst) and 'Oracle' (Data Scientist) you interview lives and breathes in Pandas DataFrames. It is their primary workbench. Understanding a DataFrame is understanding their world.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: Looking at your stats, `score=100`, is objectively satisfying. The data does not lie.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Identify the structure.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='c' 
+                 data-correct-feedback="Correct. The core data structure in the Pandas library is the DataFrame."
+                 data-incorrect-feedback="Incorrect. While you use a list of dictionaries to create it, the structure itself within Pandas is called a DataFrame.">
+                <p><strong>What is the primary table-like data structure provided by the Pandas library?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> Dictionary</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> List</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> DataFrame</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Structure</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_21.html" class="nav-button">← Last Phase</a>
+            <a href="day_23.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

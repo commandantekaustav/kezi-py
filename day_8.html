@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 8: True or False | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 8 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 8: True or False</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>Sometimes, the only intel you need is a simple "yes" or "no". Is the door locked? Is the guard asleep? In Python, we have a data type for this: the **boolean**. It has only two possible values: `True` or `False`. They are the foundation of all logic and decision-making in code.</p>
+            </div>
+
+            <h2>The Blueprint: Booleans & Comparisons</h2>
+            <p>Booleans are most often the result of a comparison. We use **comparison operators** to ask true-or-false questions about our data.</p>
+            <div class='intel-card'><h3>Comparison Operators</h3>
+                <ul>
+                    <li>`==`  : Equal to</li>
+                    <li>`!=`  : Not equal to</li>
+                    <li>`>`   : Greater than</li>
+                    <li>`<`   : Less than</li>
+                    <li>`>=`  : Greater than or equal to</li>
+                    <li>`<=`  : Less than or equal to</li>
+                </ul>
+            </div>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+interview_score = 92
+years_experience = 5
+
+# Let's ask some True/False questions.
+is_high_scorer = interview_score > 90
+print(f"Is the candidate a high scorer? {is_high_scorer}") # Output: True
+
+is_senior_candidate = years_experience > 8
+print(f"Is the candidate a senior? {is_senior_candidate}") # Output: False
+
+is_perfect_score = interview_score == 100
+print(f"Was it a perfect score? {is_perfect_score}") # Output: False
+
+is_not_junior = years_experience != 1
+print(f"Is the candidate not a junior? {is_not_junior}") # Output: True
+
+# You can store booleans in variables directly.
+offer_sent = False
+background_check_passed = True
+print(f"Has the offer been sent? {offer_sent}")
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>Every decision a program makes boils down to a `True` or `False` question. "Is the user logged in?" (`True`). "Is the password correct?" (`True`). "Does the cart have items?" (`True`). When you understand this, you understand the binary heart of programming logic. It's the simple switch that controls the entire complex machine.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: `is_Kezia_brilliant = True`. This is not a variable. It is a fact.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Evaluate the expression.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. 50 is not greater than 75, so the expression evaluates to False."
+                 data-incorrect-feedback="Read the operator carefully. Is 50 greater than 75?">
+                <p><strong>What is the result of the expression `50 > 75`?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> False</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> True</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Result</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_7.html" class="nav-button">← Last Phase</a>
+            <a href="day_9.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

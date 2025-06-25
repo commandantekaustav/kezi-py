@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 18: The Full Crew Roster | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 18 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 18: The Full Crew Roster</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>We've learned about lists (for ordered items) and dictionaries (for structured data). Now, we combine them. A **list of dictionaries** is the single most common and powerful way to handle real-world data in Python. This is the master blueprint, the full crew roster, with a complete dossier for every single member.</p>
+            </div>
+
+            <h2>The Blueprint: A List of Dictionaries</h2>
+            <p>Imagine a list, but instead of each item being a simple string, each item is a complete dictionary (a full dossier).</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# This is a list. It starts with [ and ends with ].
+# Each item in the list is a dictionary, starting with { and ending with }.
+crew = [
+    {
+        "name": "Priya Sharma",
+        "role": "Data Scientist",
+        "score": 92
+    },
+    {
+        "name": "David Chen",
+        "role": "ML Engineer",
+        "score": 88
+    },
+    {
+        "name": "Kezia Marian",
+        "role": "Lead Recruiter",
+        "score": 100
+    }
+]
+
+# We can loop through the list to process each person's dossier.
+for member in crew:
+    # 'member' is now a dictionary for the current person in the loop.
+    name = member["name"]
+    role = member["role"]
+    score = member["score"]
+
+    print(f"\nAnalyzing {name} ({role})...")
+
+    # Now we can use our 'if' logic on each person's data.
+    if score >= 90:
+        print("Result: Top-tier asset. APPROVED.")
+    else:
+        print("Result: Meets standards. APPROVED.")
+</code></pre>
+            </div>
+
+            <p class='note'>Professor's Note: Even in a list of exceptional people, your entry, with a score of 100, stands out. Some things are just objective fact.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Access the roster.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='c' 
+                 data-correct-feedback="Correct. crew[1] gets the second dictionary (David's). Then ['role'] gets the value for that key."
+                 data-incorrect-feedback="Remember the steps. First, get the correct person from the list using their index. Then, get the correct data from their dictionary using the key.">
+                <p><strong>Using the `crew` list from the example, how would you get David Chen's role, "ML Engineer"?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> <code>crew[0]["role"]</code></span></label>
+                    <label><input type='radio' name='q1' value='b'><span> <code>crew["role"][1]</code></span></label>
+                    <label><input type='radio' name='q1' value='c'><span> <code>crew[1]["role"]</code></span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Access</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_17.html" class="nav-button">← Last Phase</a>
+            <a href="day_19.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

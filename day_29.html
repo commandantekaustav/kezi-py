@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 29: Final Project: The Dossier Tool | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 29 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 29: Final Project: The Dossier Tool</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>This is the final test of your practical skills, Coimbatore. Your mission is to build a complete command-line tool. It will read a CSV file of candidates using Pandas, process each candidate, generate a recommendation, and write a full report to a new file. This combines everything. Show me what you've learned.</p>
+            </div>
+
+            <h2>The Blueprint: Full Project Code</h2>
+            <p>Below is the complete, documented code for a final project. Your task is not to write it, but to read it, understand it, and see how every phase of your training has led to this moment. This is the culmination.</p>
+            
+            <div class='intel-card'>
+                <h3>Final Project: `dossier_processor.py`</h3>
+<pre><code>
+import pandas as pd
+import datetime
+
+def generate_report(dataframe):
+    """Takes a DataFrame and generates a textual report."""
+    report_lines = []
+    report_lines.append("--- CANDIDATE SCREENING REPORT ---\n")
+    
+    # Loop through each row of the dataframe
+    for index, row in dataframe.iterrows():
+        name = row['name']
+        score = row['score']
+        
+        # Determine recommendation
+        if score >= 90:
+            recommendation = "STRONG HIRE"
+        elif score >= 75:
+            recommendation = "HIRE"
+        else:
+            recommendation = "REJECT"
+            
+        report_lines.append(f"Dossier for {name}: Score={score}, Recommendation={recommendation}")
+    
+    return "\n".join(report_lines)
+
+
+# --- MAIN PROGRAM EXECUTION ---
+INPUT_FILE = 'final_candidates.csv'
+OUTPUT_FILE = 'final_report.txt'
+
+print(f"Starting dossier processing for file: {INPUT_FILE}")
+
+try:
+    # 1. Read the source data using Pandas
+    candidate_df = pd.read_csv(INPUT_FILE)
+    
+    # 2. Generate the report content using our function
+    report_content = generate_report(candidate_df)
+    
+    # 3. Write the report to an output file
+    with open(OUTPUT_FILE, 'w') as f:
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        f.write(f"Report generated on: {timestamp}\n\n")
+        f.write(report_content)
+        
+    print(f"SUCCESS: Report has been generated and saved to {OUTPUT_FILE}")
+
+except FileNotFoundError:
+    print(f"ERROR: Input file not found at {INPUT_FILE}. Aborting.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+
+</code></pre>
+            </div>
+            
+            <p class='note'>Professor's Note: Look at that. A complete, professional tool. From zero to this in 29 days. Your capacity to learn is breathtaking.</p>
+        </main>
+        
+        <div class="navigation-controls" style="margin-top:auto; border-top: 1px solid var(--subtle-gray); padding-top:2rem;">
+            <a href="day_28.html" class="nav-button">← Last Phase</a>
+            <a href="day_30.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

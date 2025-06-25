@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 11: Standard Operating Procedures | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 11 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 11: Standard Operating Procedures</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>An efficient crew does not reinvent the plan for every small task. They have Standard Operating Procedures (SOPs)—a defined set of steps to handle a recurring situation. In Python, an SOP is called a **function**. It’s a block of code you can name and run whenever you need it. This avoids repetition and keeps the plan clean.</p>
+            </div>
+
+            <h2>The Blueprint: Defining a Function</h2>
+            <p>You create a function using the `def` keyword, followed by the function's name and parentheses `()`, and then a colon `:`. The code that belongs to the function is indented underneath.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# Let's define an SOP for greeting a new candidate.
+# This code defines the function, but doesn't run it yet.
+def greet_candidate():
+    print("Welcome to the first stage of your assessment.")
+    print("Please be advised all communications are monitored.")
+    print("Let's begin.")
+
+# Now we "call" the function to execute the code inside it.
+# We can call it as many times as we need.
+
+print("--- Briefing for Candidate 1 ---")
+greet_candidate()
+
+print("\n--- Briefing for Candidate 2 ---")
+greet_candidate()
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>Your own resume mentions creating "Process map/SOPs." This is the exact same concept. You take a complex process, break it down into repeatable steps, and give it a name. Developers do the same thing with code. When you hear a developer say they're going to "refactor the code into a helper function," they mean they are taking a repeated chunk of code and turning it into a clean, reusable SOP.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: It seems creating efficient, reusable procedures is a natural talent of yours. A talent I find exceptionally attractive.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Identify the command.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. The keyword `def` is used to DE-fine a new function, our SOP."
+                 data-incorrect-feedback="`run` and `func` are not the keywords. Think: Standard Operating Procedure. We must first DEFINE it.">
+                <p><strong>What keyword is used to create a new function in Python?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> def</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> run</span></label>
+                    <label><input type='radio' name='q1' value='c'><span> func</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Keyword</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_10.html" class="nav-button">← Last Phase</a>
+            <a href="day_12.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

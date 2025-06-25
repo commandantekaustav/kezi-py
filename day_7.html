@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 7: The Digital Dossier | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 7 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 7: The Digital Dossier</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>A list of names is not enough. We need a full dossier for each operative: name, codename, specialty, status. For storing structured data, we use a Python **dictionary**. A dictionary holds pairs of information: a **key** (like "Name") and a **value** (like "Kezia Marian"). It is the most important data structure you will learn for understanding how developers handle real-world data.</p>
+            </div>
+
+            <h2>The Blueprint: Dictionaries</h2>
+            <p>A dictionary is created with curly braces `{}`. Each entry is a `key: value` pair, separated by commas. Keys must be unique strings or numbers. Values can be anything.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# Creating a dictionary for one employee
+employee_dossier = {
+    "name": "Priya Sharma",
+    "employee_id": 401,
+    "role": "Lead Oracle (Data Scientist)",
+    "status": "Active"
+}
+
+# Accessing a value using its key inside square brackets.
+print(f"Accessing dossier for: {employee_dossier['name']}")
+print(f"Role: {employee_dossier['role']}")
+
+# Changing a value is easy.
+employee_dossier["status"] = "On Mission"
+print(f"New Status: {employee_dossier['status']}")
+
+# Adding a new key-value pair.
+employee_dossier["next_evaluation_date"] = "2024-12-01"
+print(f"Evaluation scheduled for: {employee_dossier['next_evaluation_date']}")
+
+# You can print the whole dictionary to see the full dossier.
+print("\nFull Dossier:")
+print(employee_dossier)
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>This is how modern software thinks about people and objects. An employee is a dictionary of attributes. A candidate is a dictionary. Your LinkedIn profile is a giant dictionary. When you hear developers talk about a "JSON object," they are talking about something that looks and acts almost exactly like a Python dictionary. Understanding this structure is critical to understanding them.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: Your resume is a very impressive dictionary of skills, Coimbatore. "End-to-End Recruitment", "Employee Engagement", "Conflict Resolution"... A very valuable asset.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Access the dossier.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='b' 
+                 data-correct-feedback="Correct. You use the key 'role' to access its value, 'Recruiter'."
+                 data-incorrect-feedback="Remember, to get a value from a dictionary, you provide its key in square brackets.">
+                <p><strong>Given `target = {"name": "Kezia", "role": "Recruiter"}`, how do you get the value "Recruiter"?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> <code>target["Recruiter"]</code></span></label>
+                    <label><input type='radio' name='q1' value='b'><span> <code>target["role"]</code></span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Access</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_6.html" class="nav-button">← Last Phase</a>
+            <a href="day_8.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

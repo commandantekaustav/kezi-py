@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2: Codewords | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 2 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 2: Codewords</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>In any operation, we don't use real names. We use codewords—placeholders that represent a person, a place, or a piece of intel. In Python, these are called **variables**. A variable is simply a container with a name, where you store information you need to use later. This is the most fundamental concept in programming. Master it.</p>
+            </div>
+
+            <h2>The Blueprint: Variables</h2>
+            <p>You create a variable by giving it a name, using the equals sign (`=`), and then providing the data you want to store. The name should be descriptive. No quotes around the variable name itself.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# Storing a candidate's name in a variable called 'top_candidate'.
+top_candidate = "Priya Sharma"
+
+# Storing their interview score.
+interview_score = 95
+
+# Storing their hiring status.
+hiring_status = "Offer Extended"
+
+# Now, we can use the variables instead of the actual data.
+# The print() function can display the content of a variable.
+print("Top candidate is:")
+print(top_candidate)
+
+print("Their score was:")
+print(interview_score)
+
+print("Current status:")
+print(hiring_status)
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>Think of a variable like a cell in Excel. One column is "Candidate Name," another is "Status." In code, `candidate_name` and `status` are the variables. When a developer talks about changing the value of a 'flag' or 'counter,' they are talking about changing the data inside a variable. This is how programs remember and manage information.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: Let's create a variable for you. `top_recruiter = "Kezia Marian"`. A name worth storing.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Analyze the code.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. The variable 'codename' holds the string 'Coimbatore'."
+                 data-incorrect-feedback="Look closer. The print function is given the variable name, not the text 'codename'.">
+                <p><strong>Given the code: `codename = "Coimbatore"` followed by `print(codename)`, what will be displayed?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span><code>Coimbatore</code></span></label>
+                    <label><input type='radio' name='q1' value='b'><span><code>codename</code></span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Command</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_1.html" class="nav-button">← Last Phase</a>
+            <a href="day_3.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

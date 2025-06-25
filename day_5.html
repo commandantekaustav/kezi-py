@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 5: The Interactive Dossier | The Python Heist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lesson-container">
+        <div class="header">
+            <div class="logo"><a href="index.html">The Python Heist</a></div>
+            <div class="progress-bar">Phase 5 of 30</div>
+        </div>
+
+        <main>
+            <h1>Phase 5: The Interactive Dossier</h1>
+            
+            <div class="professors-briefing">
+                <h2>Professor's Briefing</h2>
+                <p>A plan shouldn't be static. Sometimes, you need to provide fresh intel while the operation is running. The `input()` function allows you to do just that. It pauses the program and waits for the user to type something and press Enter. It turns a one-way script into a two-way conversation. </p>
+            </div>
+
+            <h2>The Blueprint: The `input()` Function</h2>
+            <p>The `input()` function prompts the user for information. The text you put inside the parentheses is the prompt the user sees. The function then "returns" whatever the user types as a **string**.</p>
+            
+            <div class='intel-card'>
+                <h3>Code Workbench</h3>
+<pre><code>
+# Ask for the candidate's name and store it in a variable.
+candidate_name = input("Enter candidate's full name: ")
+
+# Ask for the role they are applying for.
+role = input("Enter the role they are applying for: ")
+
+# Ask for their years of experience.
+# Remember, input() returns a STRING.
+experience_str = input("Enter years of experience: ")
+
+# Create a summary message.
+# The 'f' before the string creates an "f-string",
+# which lets you embed variables directly in curly braces {}.
+summary = f"Processing dossier for {candidate_name}, applying for {role} with {experience_str} years of experience."
+
+print("\n--- DOSSIER SUMMARY ---")
+print(summary)
+print("---------------------\n")
+
+# To use experience_str as a number, we must convert it.
+# This is called 'casting'. We cast the string to an integer.
+experience_int = int(experience_str)
+next_year_experience = experience_int + 1
+print(f"Next year, they will have {next_year_experience} years of experience.")
+</code></pre>
+            </div>
+
+            <div class="extraction-protocol">
+                <h3>Why This Matters To You</h3>
+                <p>This is the heart of interactivity. Every form you fill out online, every time you type in a search bar, a function similar to `input()` is capturing your text. Understanding this helps you see that software isn't magic; it's a series of conversations between the user and the code.</p>
+            </div>
+            
+            <p class='note'>Professor's Note: I'd like to use `input()` to ask what you're thinking, Kezia. That mind of yours is the most interesting system I've encountered.</p>
+        </main>
+        
+        <div class="quiz-section"><h2>Field Test</h2><p>Determine the data type.</p><form id="quiz-form">
+            <div class='quiz-question' id='q1' 
+                 data-correct-answer='a' 
+                 data-correct-feedback="Correct. The input() function always returns a string, even if the user types numbers."
+                 data-incorrect-feedback="Be careful. The input() function always captures user input as a string, regardless of what they type.">
+                <p><strong>If a user types `25` when prompted by `age = input("Enter age: ")`, what is the data type of the `age` variable?</strong></p>
+                <div class='quiz-options'>
+                    <label><input type='radio' name='q1' value='a'><span> String</span></label>
+                    <label><input type='radio' name='q1' value='b'><span> Integer</span></label>
+                </div>
+                <div class='feedback' id='feedback-q1'></div>
+            </div>
+            <div class="button-container"><button type="button" class="button">Confirm Type</button></div>
+        </form></div>
+
+        <div class="navigation-controls">
+            <a href="day_4.html" class="nav-button">← Last Phase</a>
+            <a href="day_6.html" class="nav-button">Next Phase →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
